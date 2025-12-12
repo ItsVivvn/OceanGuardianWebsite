@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard • SDG 14 — Life Below Water</title>
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="" crossorigin=""/>
+
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <style>
+
+    .chart-card { min-height: 300px; }
+    #map { height: 360px; width: 100%; border-radius: 6px; }
+    .chart-legend { font-size: 0.85rem; color: #6c757d; }
+  </style>
+</head>
+<body>
+
+  <header class="bg-deepblue sticky-top">
+    <nav class="navbar navbar-expand-lg container navbar-dark">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <i class="bi bi-water fs-3 me-2"></i>
+        <span class="fw-bold">SDG 14</span>
+        <small class="ms-2 text-muted">Life Below Water</small>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="plastic-pollution.html">Plastic</a></li>
+          <li class="nav-item"><a class="nav-link" href="coral-bleaching.html">Coral Bleaching</a></li>
+          <li class="nav-item"><a class="nav-link" href="overfishing.html">Overfishing</a></li>
+          <li class="nav-item"><a class="nav-link" href="ocean-temperature.html">Ocean Temp</a></li>
+          <li class="nav-item"><a class="nav-link active" href="dashboard.html">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="/join">Join Movement</a></li>
+          <li class="nav-item"><a class="nav-link" href="/members">Members</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+
+  <main class="py-5">
+    <div class="container">
+
+      <div class="row mb-4">
+        <div class="col">
+          <h1 class="fw-bold">Interactive Dashboard</h1>
+          <p class="text-muted">Explore sample visualizations for ocean temperature, plastic pollution, and fishing pressure.</p>
+        </div>
+      </div>
+
+
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="card chart-card">
+            <div class="card-body">
+              <h5 class="card-title">Sea Surface Temperature (Sample)</h5>
+              <p class="small text-muted mb-2">Line chart showing monthly/annual sea surface temperature trend (sample data).</p>
+              <div style="height:320px;">
+                <canvas id="tempChart" aria-label="Sea surface temperature chart" role="img"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="card chart-card mb-4">
+            <div class="card-body">
+              <h5 class="card-title">Plastic Pollution by Region (Sample)</h5>
+              <p class="small text-muted mb-2">Bar chart shows relative plastic tonnes per region (sample).</p>
+              <div style="height:200px;">
+                <canvas id="plasticChart" aria-label="Plastic pollution by region chart" role="img"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Fishing Pressure (Sample)</h5>
+              <p class="small text-muted mb-2">Doughnut chart indicating fishing pressure across regions (sample metric).</p>
+              <div style="height:150px;">
+                <canvas id="fishingChart" aria-label="Fishing pressure chart" role="img"></canvas>
+              </div>
+              <div class="chart-legend mt-2">Hover or tap slices for details.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4 mt-1">
+        <div class="col-lg-8">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Map — Sample Hotspots</h5>
+              <p class="small text-muted mb-2">Markers show sample plastic reports and coral bleaching events. Click markers for details.</p>
+              <div id="map" role="application" aria-label="Map showing hotspots"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Data Sources & Tips</h5>
+              <p class="small text-muted">This page uses local JSON files.</p>
+              <hr/>
+              <h6 class="mb-2">Quick schema summary</h6>
+              <ul class="small">
+                <li><code>sea_temperature</code>: [{ "date": "YYYY-MM-DD", "value": number, "region": "string" }]</li>
+                <li><code>plastic_by_region</code>: [{ "region": "string", "value": number }]</li>
+                <li><code>fishing_pressure</code>: [{ "region": "string", "value": number }]</li>
+                <li><code>hotspots (geojson)</code>: GeoJSON FeatureCollection with Points, include properties like type, severity, notes</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+
+  <footer class="footer py-4">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-md-start text-center">
+          <small class="text-muted">© SDG 14 — Life Below Water • Educational demo</small>
+        </div>
+        <div class="col-md-6 text-md-end text-center">
+          <a class="text-muted me-3" href="about.html#sources">Sources</a>
+          <a class="text-muted" href="about.html#credits">Credits</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script>
+    (function () {
+
+      const fallbackData = {
+        "sea_temperature": [
+          {"date":"2015-01-01","value":16.8},
+          {"date":"2016-01-01","value":17.1},
+          {"date":"2017-01-01","value":17.4},
+          {"date":"2018-01-01","value":17.6},
+          {"date":"2019-01-01","value":17.7},
+          {"date":"2020-01-01","value":17.9},
+          {"date":"2021-01-01","value":18.0},
+          {"date":"2022-01-01","value":18.1},
+          {"date":"2023-01-01","value":18.2},
+          {"date":"2024-01-01","value":18.3}
+        ],
+        "plastic_by_region": [
+          {"region":"Asia","value":4000},
+          {"region":"Africa","value":800},
+          {"region":"Europe","value":600},
+          {"region":"Americas","value":1200},
+          {"region":"Oceania","value":150}
+        ],
+        "fishing_pressure": [
+          {"region":"North Atlantic","value":75},
+          {"region":"Indian Ocean","value":60},
+          {"region":"Pacific","value":90},
+          {"region":"Mediterranean","value":50}
+        ]
+      };
+
+      const fallbackGeoJSON = {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "properties": {
+              "type": "plastic",
+              "severity": "high",
+              "notes": "Large debris patch near river mouth",
+              "date": "2023-07-12"
+            },
+            "geometry": { "type": "Point", "coordinates": [147.7, -9.4] }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "type": "bleaching",
+              "severity": "medium",
+              "notes": "Reported bleaching on shallow reef",
+              "date": "2022-03-05"
+            },
+            "geometry": { "type": "Point", "coordinates": [153.0, -23.5] }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "type": "plastic",
+              "severity": "low",
+              "notes": "Local shoreline fragments",
+              "date": "2023-11-02"
+            },
+            "geometry": { "type": "Point", "coordinates": [-80.2, 25.8] }
+          }
+        ]
+      };
+
+
+      function fetchLocalJson(path, fallback) {
+        return fetch(path)
+          .then(r => { if (!r.ok) throw new Error('no local'); return r.json(); })
+          .catch(() => fallback);
+      }
+
+      Promise.all([
+        fetchLocalJson('data/sample-data.json', fallbackData),
+        fetchLocalJson('data/geojson.json', fallbackGeoJSON)
+      ]).then(([data, geojson]) => {
+        initCharts(data);
+        initMap(geojson);
+      }).catch(err => {
+        console.error('Error loading data:', err);
+        initCharts(fallbackData);
+        initMap(fallbackGeoJSON);
+      });
+
+
+      let tempChart, plasticChart, fishingChart;
+
+      function initCharts(data) {
+
+        const tempCtx = document.getElementById('tempChart').getContext('2d');
+
+        const tempItems = (data.sea_temperature || []).slice();
+        const tempLabels = tempItems.map(d => {
+          try { return new Date(d.date).getFullYear(); } catch { return d.date; }
+        });
+        const tempValues = tempItems.map(d => Number(d.value));
+
+        if (tempChart) tempChart.destroy();
+        tempChart = new Chart(tempCtx, {
+          type: 'line',
+          data: {
+            labels: tempLabels,
+            datasets: [{
+              label: 'Sea Surface Temp (°C)',
+              data: tempValues,
+              borderColor: '#0b74d1',
+              backgroundColor: 'rgba(11,116,209,0.12)',
+              tension: 0.25,
+              pointRadius: 3
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: { beginAtZero: false, title: { display: true, text: '°C' } },
+              x: { title: { display: true, text: 'Year' } }
+            },
+            plugins: { legend: { display: false } }
+          }
+        });
+
+
+        const plasticCtx = document.getElementById('plasticChart').getContext('2d');
+        const plasticItems = data.plastic_by_region || [];
+        const plasticLabels = plasticItems.map(d => d.region);
+        const plasticValues = plasticItems.map(d => Number(d.value));
+
+        if (plasticChart) plasticChart.destroy();
+        plasticChart = new Chart(plasticCtx, {
+          type: 'bar',
+          data: {
+            labels: plasticLabels,
+            datasets: [{
+              label: 'Plastic (sample tonnes)',
+              data: plasticValues,
+              backgroundColor: plasticLabels.map(_ => 'rgba(11,116,209,0.75)'),
+              borderRadius: 6
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              x: { ticks: { autoSkip: false } },
+              y: { beginAtZero: true }
+            },
+            plugins: { legend: { display: false } }
+          }
+        });
+
+        const fishingCtx = document.getElementById('fishingChart').getContext('2d');
+        const fishItems = data.fishing_pressure || [];
+        const fishLabels = fishItems.map(d => d.region);
+        const fishValues = fishItems.map(d => Number(d.value));
+
+        if (fishingChart) fishingChart.destroy();
+        fishingChart = new Chart(fishingCtx, {
+          type: 'doughnut',
+          data: {
+            labels: fishLabels,
+            datasets: [{
+              data: fishValues,
+              backgroundColor: ['#0b74d1','#1e90ff','#66b2ff','#a8d1ff'],
+              hoverOffset: 6
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { position: 'bottom' }
+            }
+          }
+        });
+      }
+
+
+      let mapInstance;
+      function initMap(geojson) {
+
+        if (!mapInstance) {
+
+          mapInstance = L.map('map', { scrollWheelZoom: true }).setView([0, 20], 2);
+
+
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; OpenStreetMap contributors'
+          }).addTo(mapInstance);
+        }
+
+
+        const hotspotStyle = {
+          plastic: { color: '#ff7f50' },
+          bleaching: { color: '#ffcc00' },
+          default: { color: '#3388ff' }
+        };
+
+        function pointToLayer(feature, latlng) {
+          const type = (feature.properties && feature.properties.type) || 'default';
+          const color = (hotspotStyle[type] && hotspotStyle[type].color) || hotspotStyle.default.color;
+
+          return L.circleMarker(latlng, {
+            radius: 8,
+            fillColor: color,
+            color: '#ffffff',
+            weight: 1,
+            opacity: 1,
+            fillOpacity: 0.9
+          });
+        }
+
+        function onEachFeature(feature, layer) {
+          if (!feature.properties) return;
+          const props = feature.properties;
+          const lines = [];
+          if (props.type) lines.push('<strong>Type:</strong> ' + props.type);
+          if (props.severity) lines.push('<strong>Severity:</strong> ' + props.severity);
+          if (props.date) lines.push('<strong>Date:</strong> ' + props.date);
+          if (props.notes) lines.push('<div style="margin-top:6px;">' + props.notes + '</div>');
+          layer.bindPopup(lines.join('<br/>'));
+        }
+
+        if (mapInstance.hotspotLayer) {
+          mapInstance.removeLayer(mapInstance.hotspotLayer);
+        }
+
+        const layer = L.geoJSON(geojson, {
+          pointToLayer,
+          onEachFeature
+        }).addTo(mapInstance);
+
+        mapInstance.hotspotLayer = layer;
+
+
+        try {
+          const bounds = layer.getBounds();
+          if (bounds.isValid()) mapInstance.fitBounds(bounds.pad(0.3));
+        } catch (e) {
+
+        }
+      }
+
+      window.sdgdashboard = { initCharts, initMap };
+    })();
+  </script>
+</body>
+</html>

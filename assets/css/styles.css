@@ -1,0 +1,245 @@
+/* ---------------------------------------------------------
+   SDG 14 — Life Below Water
+   Global Stylesheet
+   --------------------------------------------------------- */
+
+/* --------------------------
+   Color Palette
+--------------------------- */
+:root {
+  --sdg-blue: #0b74d1;
+  --sdg-lightblue: #66b2ff;
+  --sdg-darkblue: #083b6f;
+  --sdg-softblue: #e7f4ff;
+  --sdg-accent-orange: #ff7f50;
+  --sdg-accent-yellow: #ffcc00;
+  --sdg-accent-purple: #8a2be2;
+
+  --radius-lg: 14px;
+  --radius-md: 10px;
+  --radius-sm: 6px;
+
+  --shadow-card: 0 6px 18px rgba(13, 36, 77, 0.12);
+  --shadow-hover: 0 10px 22px rgba(13, 36, 77, 0.18);
+}
+
+/* --------------------------
+   General Reset Enhancements
+--------------------------- */
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background-color: #f8fbff;
+  color: #1b1b1b;
+  line-height: 1.7;
+}
+
+/* Remove highlight on tap for mobile */
+body, button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Smooth transitions globally */
+* {
+  transition: 0.15s ease;
+}
+
+/* --------------------------
+   Navbar
+--------------------------- */
+.bg-deepblue {
+  background: var(--sdg-darkblue) !important;
+}
+
+.navbar-brand small {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.nav-link.active {
+  color: var(--sdg-accent-yellow) !important;
+  font-weight: 600;
+}
+
+/* Hover underline effect */
+.nav-link {
+  position: relative;
+  padding-bottom: 6px !important;
+}
+
+.nav-link:hover {
+  color: var(--sdg-lightblue) !important;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link::after {
+  content: "";
+  height: 2px;
+  width: 0;
+  background: var(--sdg-lightblue);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: 0.25s ease;
+}
+
+/* --------------------------
+   Footer
+--------------------------- */
+.footer {
+  background: #f0f7ff;
+  border-top: 1px solid #dce9f7;
+}
+
+.footer a:hover {
+  color: var(--sdg-blue) !important;
+}
+
+
+.hero {
+  padding: 4rem 0;
+  text-align: center;
+  background: linear-gradient(135deg, var(--sdg-blue), var(--sdg-darkblue));
+  color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+}
+
+.hero p {
+  opacity: 0.9;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+
+.card {
+  border: none;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card-title {
+  font-weight: 600;
+}
+
+
+.issue-card {
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 1.25rem;
+}
+
+.issue-card:hover {
+  background: var(--sdg-softblue);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+}
+
+
+#map {
+  width: 100%;
+  height: 420px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.sdg-legend {
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: var(--shadow-card);
+}
+
+
+.chart-box,
+.chart-area {
+  width: 100%;
+  height: 320px;
+  position: relative;
+}
+
+canvas {
+  border-radius: var(--radius-md);
+}
+
+
+.btn-primary {
+  background: var(--sdg-blue);
+  border-color: var(--sdg-blue);
+}
+
+.btn-primary:hover {
+  background: var(--sdg-darkblue);
+}
+
+.btn-outline-primary {
+  color: var(--sdg-blue);
+  border-color: var(--sdg-blue);
+}
+
+.btn-outline-primary:hover {
+  background: var(--sdg-blue);
+  color: white;
+}
+
+
+h1, h2, h3, h4 {
+  color: var(--sdg-darkblue);
+  font-weight: 700;
+}
+
+ul li {
+  margin-bottom: 6px;
+}
+
+#downloadData {
+  border-radius: var(--radius-sm);
+}
+
+
+.stat-value {
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--sdg-blue);
+}
+
+.small-muted {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.rounded-lg {
+  border-radius: var(--radius-lg);
+}
+
+.shadow-soft {
+  box-shadow: var(--shadow-card);
+}
+
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 3rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .chart-area, .chart-box {
+    height: 260px;
+  }
+}

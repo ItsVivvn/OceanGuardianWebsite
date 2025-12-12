@@ -1,0 +1,225 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gh-001",
+        "type": "plastic",
+        "severity": "high",
+        "date": "2024-07-12",
+        "notes": "Large floating debris patch observed near river mouth; survey team reported concentrated microplastics."
+      },
+      "geometry": { "type": "Point", "coordinates": [147.7000, -9.4000] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gh-002",
+        "type": "bleaching",
+        "severity": "medium",
+        "date": "2023-03-05",
+        "notes": "Moderate bleaching on shallow reef following seasonal heat anomaly."
+      },
+      "geometry": { "type": "Point", "coordinates": [153.0000, -23.5000] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gh-003",
+        "type": "plastic",
+        "severity": "low",
+        "date": "2023-11-02",
+        "notes": "Shoreline fragments collected during volunteer cleanup; mostly consumer packaging."
+      },
+      "geometry": { "type": "Point", "coordinates": [-80.2000, 25.8000] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gh-004",
+        "type": "bleaching",
+        "severity": "high",
+        "date": "2020-02-18",
+        "notes": "Severe mass bleaching event documented in this sector of the Great Barrier Reef."
+      },
+      "geometry": { "type": "Point", "coordinates": [150.4000, -18.1000] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gh-005",
+        "type": "fishing",
+        "severity": "high",
+        "date": "2023-05-27",
+        "notes": "Area classified as overfished based on catch records and satellite AIS analysis."
+      },
+      "geometry": { "type": "Point", "coordinates": [-30.1000, 40.0000] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gh-006",
+        "type": "pollution",
+        "severity": "medium",
+        "date": "2022-09-14",
+        "notes": "Small oil sheen detected offshore; local authorities monitoring."
+      },
+      "geometry": { "type": "Point", "coordinates": [55.3000, 22.4000] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gh-007",
+        "type": "plastic",
+        "severity": "medium",
+        "date": "2021-12-04",
+        "notes": "Ghost net observed drifting toward marine protected area; retrieval recommended."
+      },
+      "geometry": { "type": "Point", "coordinates": [-17.2000, 14.7000] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gh-008",
+        "type": "bleaching",
+        "severity": "low",
+        "date": "2023-04-09",
+        "notes": "Localized bleaching documented during reef monitoring dive."
+      },
+      "geometry": { "type": "Point", "coordinates": [166.9000, -16.1000] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gh-009",
+        "type": "plastic",
+        "severity": "high",
+        "date": "2024-01-18",
+        "notes": "Satellite imagery + field reports indicate accumulation of fishing-related debris near estuary."
+      },
+      "geometry": { "type": "Point", "coordinates": [120.9000, 14.6000] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gh-010",
+        "type": "fishing",
+        "severity": "medium",
+        "date": "2022-06-10",
+        "notes": "High bycatch rates recorded; local communities report declining catches."
+      },
+      "geometry": { "type": "Point", "coordinates": [34.9000, -1.3000] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gh-011",
+        "type": "pollution",
+        "severity": "low",
+        "date": "2023-08-22",
+        "notes": "Runoff after heavy rains carried debris to coastal lagoon; municipal cleanup planned."
+      },
+      "geometry": { "type": "Point", "coordinates": [-58.3838, -34.6037] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gh-012",
+        "type": "bleaching",
+        "severity": "medium",
+        "date": "2021-10-11",
+        "notes": "Repeated seasonal stress causing partial bleaching on fringing coral reef."
+      },
+      "geometry": { "type": "Point", "coordinates": [42.3500, -3.3500] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gh-013",
+        "type": "plastic",
+        "severity": "medium",
+        "date": "2023-02-14",
+        "notes": "Microplastics detected in nearshore sediments; source appears to be urban runoff."
+      },
+      "geometry": { "type": "Point", "coordinates": [18.4233, -33.9258] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gh-014",
+        "type": "fishing",
+        "severity": "high",
+        "date": "2024-03-05",
+        "notes": "Intensive industrial trawling reported; bottom habitat damage suspected."
+      },
+      "geometry": { "type": "Point", "coordinates": [140.9000, 36.2000] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gh-015",
+        "type": "bleaching",
+        "severity": "high",
+        "date": "2019-04-30",
+        "notes": "Mass bleaching observed after prolonged heatwave; partial recovery observed later."
+      },
+      "geometry": { "type": "Point", "coordinates": [-63.5320, 18.3358] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gh-016",
+        "type": "plastic",
+        "severity": "low",
+        "date": "2022-12-18",
+        "notes": "Single-use packaging fragments common on rocky shoreline; community notes rise since 2020."
+      },
+      "geometry": { "type": "Point", "coordinates": [2.3522, 48.8566] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gh-017",
+        "type": "pollution",
+        "severity": "medium",
+        "date": "2020-07-19",
+        "notes": "Industrial effluent reported; monitoring advised."
+      },
+      "geometry": { "type": "Point", "coordinates": [103.8198, 1.3521] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gh-018",
+        "type": "fishing",
+        "severity": "medium",
+        "date": "2021-09-02",
+        "notes": "Community-based reports of declining lobster and reef fish stocks."
+      },
+      "geometry": { "type": "Point", "coordinates": [-71.5430, -33.0458] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gh-019",
+        "type": "bleaching",
+        "severity": "low",
+        "date": "2024-05-16",
+        "notes": "Recent monitoring logged patchy bleaching in a shallow bay."
+      },
+      "geometry": { "type": "Point", "coordinates": [59.6167, -20.1667] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "gh-020",
+        "type": "plastic",
+        "severity": "high",
+        "date": "2023-09-30",
+        "notes": "Container spill reported; visible debris field along coast for several km."
+      },
+      "geometry": { "type": "Point", "coordinates": [-122.4194, 37.7749] }
+    }
+  ]
+}

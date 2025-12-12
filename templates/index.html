@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SDG 14 — Life Below Water</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <meta name="description" content="SDG 14 — Informational site about Life Below Water. Learn about plastic pollution, coral bleaching, overfishing and ocean warming." />
+</head>
+<body>
+  <header class="bg-deepblue sticky-top">
+    <nav class="navbar navbar-expand-lg container navbar-dark">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <i class="bi bi-water fs-3 me-2"></i>
+        <span class="fw-bold">SDG 14</span>
+        <small class="ms-2 text-muted">Life Below Water</small>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="plastic-pollution.html">Plastic</a></li>
+          <li class="nav-item"><a class="nav-link" href="coral-bleaching.html">Coral Bleaching</a></li>
+          <li class="nav-item"><a class="nav-link" href="overfishing.html">Overfishing</a></li>
+          <li class="nav-item"><a class="nav-link" href="ocean-temperature.html">Ocean Temp</a></li>
+          <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="/join">Join Movement</a></li>
+          <li class="nav-item"><a class="nav-link" href="/members">Members</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-section py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <h1 class="display-5 fw-bold">Protect our oceans — SDG 14: Life Below Water</h1>
+            <p class="lead text-muted mb-4">
+              Learn about plastic pollution, coral bleaching, overfishing, and rising ocean temperatures.
+              Explore interactive data and discover practical actions you can take to protect marine life.
+            </p>
+
+            <div class="d-flex gap-2 flex-wrap">
+              <a class="btn btn-primary btn-lg" href="dashboard.html"><i class="bi bi-bar-chart-line-fill me-2"></i>Explore Dashboard</a>
+              <a class="btn btn-outline-light btn-lg" href="#issues"><i class="bi bi-info-circle-fill me-2"></i>Learn the Issues</a>
+            </div>
+          </div>
+          <div class="col-lg-5 text-center mt-4 mt-lg-0">
+            <img src="assets/img/hero-ocean.jpg" alt="Ocean illustration" class="img-fluid mw-75" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-4 bg-light">
+      <div class="container">
+        <div class="row text-center g-3">
+          <div class="col-6 col-md-3">
+            <div class="stat-card p-3 rounded">
+              <div class="stat-value h2" data-value="8">8</div>
+              <div class="text-muted">Million tonnes of plastic enter oceans / year</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="stat-card p-3 rounded">
+              <div class="stat-value h2" data-value="14">14</div>
+              <div class="text-muted">% global coral reefs severely bleached</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="stat-card p-3 rounded">
+              <div class="stat-value h2" data-value="33">33</div>
+              <div class="text-muted">% major fish stocks overfished</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="stat-card p-3 rounded">
+              <div class="stat-value h2" data-value="1.2">1.2°</div>
+              <div class="text-muted">°C average ocean warming since 1900s</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="issues" class="py-5">
+      <div class="container">
+        <h2 class="mb-4">Key Marine Issues</h2>
+        <p class="text-muted mb-4">Click a card to learn more. Each section contains concise facts, a simple stat and links to a dedicated page.</p>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="card issue-card h-100" data-target="#plasticDetail">
+              <div class="card-body">
+                <div class="d-flex align-items-start">
+                  <i class="bi bi-trash3-fill fs-2 me-3 text-primary"></i>
+                  <div>
+                    <h5 class="card-title">Plastic Pollution</h5>
+                    <p class="card-text small text-muted">Marine debris, microplastics, and their long-term impacts.</p>
+                  </div>
+                </div>
+                <button class="btn btn-link mt-3 p-0" data-bs-toggle="collapse" data-bs-target="#plasticDetail" aria-expanded="false" aria-controls="plasticDetail">Read more</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="card issue-card h-100" data-target="#coralDetail">
+              <div class="card-body">
+                <div class="d-flex align-items-start">
+                  <i class="bi bi-brightness-high-fill fs-2 me-3 text-warning"></i>
+                  <div>
+                    <h5 class="card-title">Coral Bleaching</h5>
+                    <p class="card-text small text-muted">Bleaching events tied to heat stress and acidification.</p>
+                  </div>
+                </div>
+                <button class="btn btn-link mt-3 p-0" data-bs-toggle="collapse" data-bs-target="#coralDetail" aria-expanded="false" aria-controls="coralDetail">Read more</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="card issue-card h-100" data-target="#fishDetail">
+              <div class="card-body">
+                <div class="d-flex align-items-start">
+                  <i class="bi bi-fish-fill fs-2 me-3 text-success"></i>
+                  <div>
+                    <h5 class="card-title">Overfishing</h5>
+                    <p class="card-text small text-muted">Unsustainable harvests reduce biodiversity & food security.</p>
+                  </div>
+                </div>
+                <button class="btn btn-link mt-3 p-0" data-bs-toggle="collapse" data-bs-target="#fishDetail" aria-expanded="false" aria-controls="fishDetail">Read more</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="card issue-card h-100" data-target="#tempDetail">
+              <div class="card-body">
+                <div class="d-flex align-items-start">
+                  <i class="bi bi-thermometer-high fs-2 me-3 text-danger"></i>
+                  <div>
+                    <h5 class="card-title">Ocean Temperature</h5>
+                    <p class="card-text small text-muted">Warming seas drive ecosystem shifts and events.</p>
+                  </div>
+                </div>
+                <button class="btn btn-link mt-3 p-0" data-bs-toggle="collapse" data-bs-target="#tempDetail" aria-expanded="false" aria-controls="tempDetail">Read more</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4">
+          <div class="collapse" id="plasticDetail">
+            <div class="card card-body">
+              <h5>Plastic Pollution — Quick Facts</h5>
+              <p>Plastic enters oceans from rivers, coasts, and shipping. Microplastics can move through food chains and reach humans.</p>
+              <p><strong>Actions you can take:</strong> Reduce single-use plastics, participate in beach clean-ups, support policies on plastic reduction.</p>
+              <a href="plastic-pollution.html" class="btn btn-sm btn-outline-primary">Read the full page</a>
+            </div>
+          </div>
+
+          <div class="collapse" id="coralDetail">
+            <div class="card card-body">
+              <h5>Coral Bleaching — Quick Facts</h5>
+              <p>Bleaching happens when corals expel symbiotic algae under thermal stress. Recovery is possible if stress is reduced.</p>
+              <p><strong>Actions:</strong> Support marine protected areas, reduce carbon footprint, avoid damaging reef tourism practices.</p>
+              <a href="coral-bleaching.html" class="btn btn-sm btn-outline-primary">Read the full page</a>
+            </div>
+          </div>
+
+          <div class="collapse" id="fishDetail">
+            <div class="card card-body">
+              <h5>Overfishing — Quick Facts</h5>
+              <p>Overfishing occurs when fish are caught faster than they can reproduce. It threatens food security and biodiversity.</p>
+              <p><strong>Actions:</strong> Choose sustainable seafood guides (e.g., MSC), support responsible fisheries, reduce consumption of at-risk species.</p>
+              <a href="overfishing.html" class="btn btn-sm btn-outline-primary">Read the full page</a>
+            </div>
+          </div>
+
+          <div class="collapse" id="tempDetail">
+            <div class="card card-body">
+              <h5>Ocean Temperature — Quick Facts</h5>
+              <p>Rising ocean temperatures change currents, harm species adapted to specific ranges, and increase the frequency of marine heatwaves.</p>
+              <p><strong>Actions:</strong> Advocate for climate action, reduce emissions, and support research and monitoring efforts.</p>
+              <a href="ocean-temperature.html" class="btn btn-sm btn-outline-primary">Read the full page</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 bg-cta text-white">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <h3>Want to help right now?</h3>
+            <p class="mb-0">Small actions add up — reduce single-use plastics, join local cleanups, and share this site to raise awareness.</p>
+          </div>
+          <div class="col-md-4 text-md-end mt-3 mt-md-0">
+            <a href="about.html#actions" class="btn btn-light btn-lg">Practical Actions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer py-4">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-md-start text-center">
+          <small class="text-muted">© SDG 14 — Life Below Water • Educational demo</small>
+        </div>
+        <div class="col-md-6 text-md-end text-center">
+          <a class="text-muted me-3" href="about.html#sources">Sources</a>
+          <a class="text-muted" href="about.html#credits">Credits</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

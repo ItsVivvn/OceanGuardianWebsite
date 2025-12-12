@@ -1,0 +1,11 @@
+venv/
+*.pyc
+__pycache__/
+instance/
+data/*.db
+/assets/data/*.json
+.env
+.env.local
+.DS_Store
+.idea/
+.vscode/

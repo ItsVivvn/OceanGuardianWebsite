@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Coral Bleaching • SDG 14 — Life Below Water</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+</head>
+
+<body>
+  <header class="bg-deepblue sticky-top">
+    <nav class="navbar navbar-expand-lg container navbar-dark">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <i class="bi bi-water fs-3 me-2"></i>
+        <span class="fw-bold">SDG 14</span>
+        <small class="ms-2 text-muted">Life Below Water</small>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="plastic-pollution.html">Plastic</a></li>
+          <li class="nav-item"><a class="nav-link active" href="coral-bleaching.html">Coral Bleaching</a></li>
+          <li class="nav-item"><a class="nav-link" href="overfishing.html">Overfishing</a></li>
+          <li class="nav-item"><a class="nav-link" href="ocean-temperature.html">Ocean Temp</a></li>
+          <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="/join">Join Movement</a></li>
+          <li class="nav-item"><a class="nav-link" href="/members">Members</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="py-5">
+    <div class="container">
+
+      <div class="row gy-4">
+        <div class="col-lg-8">
+          <h1 class="fw-bold mb-3">Coral Bleaching</h1>
+          <p class="lead text-muted">When corals are stressed—especially by elevated sea temperatures—they expel the tiny algae (zooxanthellae) that live in their tissues and provide them with food and color. This causes corals to turn pale or white — a process called <em>bleaching</em>. Severe or prolonged bleaching can lead to coral death and the collapse of reef ecosystems that support fisheries, tourism, and coastal protection.</p>
+
+          <section class="mb-4">
+            <h3>Why it happens</h3>
+            <p>
+              Corals live close to their thermal tolerance. Short-term spikes or sustained increases in sea surface temperature, ocean acidification, pollution, and physical damage (from anchors, dynamite fishing, or careless tourism) all contribute to bleaching. The most frequent global driver is marine heatwaves — unusually warm periods that have become more common due to climate change.
+            </p>
+          </section>
+          <img src="assets/img/coral-healthy.jpg" class="img-fluid rounded-lg mb-3" alt="Healthy coral reef">
+          <img src="assets/img/coral-bleached.jpg" class="img-fluid rounded-lg mb-4" alt="Bleached coral">
+
+
+          <section class="mb-4">
+            <h3>Impacts</h3>
+            <ul>
+              <li>Loss of biodiversity — reefs host thousands of marine species.</li>
+              <li>Decline in fisheries that depend on reef habitats.</li>
+              <li>Reduced coastal protection — damaged reefs absorb less wave energy.</li>
+              <li>Economic losses in tourism-dependent communities.</li>
+            </ul>
+          </section>
+
+          <div class="mb-4">
+            <button class="btn btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#caseStudy" aria-expanded="false" aria-controls="caseStudy">
+              <i class="bi bi-bookmark-fill me-2"></i>Case Study — Great Barrier Reef (2016–2017)
+            </button>
+
+            <div class="collapse mt-3" id="caseStudy">
+              <div class="card card-body">
+                <h5>Great Barrier Reef bleaching event</h5>
+                <p class="mb-0">
+                  Between 2016 and 2017, back-to-back marine heatwaves caused extensive bleaching across the Great Barrier Reef. Northern sections experienced severe mortality. Recovery is possible, but repeated heat stress reduces resilience and the ability of reefs to bounce back.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <section id="what-you-can-do" class="mb-4">
+            <h3>What you can do</h3>
+            <p class="mb-2">Individual and community actions can help slow the drivers of bleaching and support reef resilience:</p>
+            <ul>
+              <li>Reduce your carbon footprint (lower energy use, choose sustainable transport).</li>
+              <li>Support marine protected areas and sustainable tourism operators.</li>
+              <li>Reduce pollution and runoff by choosing reef-safe products and minimizing fertilizer use.</li>
+              <li>Participate in local reef monitoring or citizen-science programs where available.</li>
+            </ul>
+          </section>
+
+        </div>
+
+        <aside class="col-lg-4">
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title">Bleaching Events by Year</h5>
+              <p class="small text-muted">Interactive chart shows sample counts of reported bleaching events per year.</p>
+              <div style="height:260px;">
+                <canvas id="bleachChart" aria-label="Bleaching events chart" role="img"></canvas>
+              </div>
+              <small class="text-muted d-block mt-2">Data source: local sample dataset (client-side).</small>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <h6 class="mb-2">Quick facts</h6>
+              <ul class="small mb-0">
+                <li>Some coral species recover within years; others take decades.</li>
+                <li>Repeated bleaching reduces coral reproductive success.</li>
+                <li>Shallow, nearshore reefs are often most vulnerable.</li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <section class="mt-5">
+        <h4>Further reading & sources</h4>
+        <ul>
+          <li><a href="https://www.unep.org/explore-topics/oceans-seas/what-we-do/coral-reefs" target="_blank">UNEP — Coral Reefs</a></li>
+          <li><a href="https://www.noaa.gov" target="_blank">NOAA — Coral Reefs</a></li>
+          <li><a href="https://www.ipcc.ch/" target="_blank">IPCC — Climate change and oceans</a></li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer py-4">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-md-start text-center">
+          <small class="text-muted">© SDG 14 — Life Below Water • Educational demo</small>
+        </div>
+        <div class="col-md-6 text-md-end text-center">
+          <a class="text-muted me-3" href="about.html#sources">Sources</a>
+          <a class="text-muted" href="about.html#credits">Credits</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+
+  <script>
+    (function () {
+      const fallback = {
+        "coral_bleaching_by_year": [
+          { "year": 2010, "count": 12 },
+          { "year": 2011, "count": 15 },
+          { "year": 2012, "count": 18 },
+          { "year": 2013, "count": 21 },
+          { "year": 2014, "count": 25 },
+          { "year": 2015, "count": 40 },
+          { "year": 2016, "count": 65 },
+          { "year": 2017, "count": 72 },
+          { "year": 2018, "count": 58 },
+          { "year": 2019, "count": 62 },
+          { "year": 2020, "count": 70 },
+          { "year": 2021, "count": 68 },
+          { "year": 2022, "count": 55 },
+          { "year": 2023, "count": 60 }
+        ]
+      };
+
+      fetch('data/sample-data.json')
+        .then(resp => {
+          if (!resp.ok) throw new Error('No local data');
+          return resp.json();
+        })
+        .then(data => {
+          if (data && Array.isArray(data.coral_bleaching_by_year)) {
+            createChart(data.coral_bleaching_by_year);
+          } else {
+            createChart(fallback.coral_bleaching_by_year);
+          }
+        })
+        .catch(() => {
+          createChart(fallback.coral_bleaching_by_year);
+        });
+
+      function normalizeAndSortBleach(items) {
+        const normalized = (items || []).map(it => {
+          let year = null;
+          if (it.year !== undefined && it.year !== null) {
+            year = Number(it.year);
+          } else if (it.date) {
+            const parsed = new Date(it.date);
+            if (!isNaN(parsed)) year = parsed.getFullYear();
+            else {
+              const m = String(it.date).match(/(19|20)\d{2}/);
+              year = m ? Number(m[0]) : NaN;
+            }
+          }
+          const count = Number(it.count ?? it.value ?? NaN);
+          return { year, count };
+        })
+        .filter(x => Number.isFinite(x.year) && Number.isFinite(x.count));
+
+        normalized.sort((a, b) => a.year - b.year);
+        return normalized;
+      }
+
+      function createChart(items) {
+        const normalized = normalizeAndSortBleach(items);
+
+        if (!normalized.length) {
+          const fallbackNormalized = normalizeAndSortBleach(fallback.coral_bleaching_by_year);
+          plotChart(fallbackNormalized);
+          return;
+        }
+
+        plotChart(normalized);
+      }
+
+      function plotChart(items) {
+        const labels = items.map(i => String(i.year));
+        const values = items.map(i => i.count);
+
+        const ctx = document.getElementById('bleachChart').getContext('2d');
+
+        if (window._bleachChartInstance) {
+          try { window._bleachChartInstance.destroy(); } catch (e) {}
+        }
+
+        window._bleachChartInstance = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: labels,
+            datasets: [{
+              label: 'Reported bleaching events (sample)',
+              data: values,
+              tension: 0.3,
+              borderWidth: 2,
+              borderColor: '#0b74d1',
+              backgroundColor: 'rgba(11,116,209,0.12)',
+              pointRadius: 4,
+              pointBackgroundColor: '#0b74d1'
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              x: {
+                title: { display: true, text: 'Year' }
+              },
+              y: {
+                title: { display: true, text: 'Number of events (sample)' },
+                beginAtZero: true
+              }
+            },
+            plugins: {
+              legend: { display: false },
+              tooltip: { mode: 'index', intersect: false }
+            }
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
